@@ -13,7 +13,10 @@ class ClothingCollection
   end
 
   def make_clothing_set(user_temperature)
-    set_by_temp = @garments.select { |garment| garment.suitable_for_the_weather?(user_temperature) }
-    @clothing_set = set_by_temp.shuffle.uniq { |garment| garment.type }
+    @garments.
+      select { |garment| garment.suitable_for_the_weather?(user_temperature) }.
+      shuffle.
+      uniq { |garment| garment.type }.
+      map { |garment| garment.to_s }
   end
 end
