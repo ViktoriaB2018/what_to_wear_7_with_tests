@@ -24,7 +24,7 @@ RSpec.describe ClothingCollection do
   describe '#make_clothing_set' do
     it 'makes clothing set' do
       clothing_set = @clothing_collection.make_clothing_set(5)
-      expect(clothing_set.to_s).to match_array([
+      expect(clothing_set).to match_array([
                                      'Джинсы (Штаны) -5..15',
                                      'Пальто (Верхняя одежда) -5..5',
                                      'Ботинки (Обувь) 0..10'
